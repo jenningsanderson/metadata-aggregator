@@ -21,8 +21,8 @@ To this end, this visualization is not an exact record of all editing activity, 
 
 This creates the following output files:
 
- - `summary-totals.csv`: Edits per day per team (to make the above graph)
- - `tileSummaries.geojsonseq`: A GeoJSON object per day per team per line to be fed into `tippecanoe`
+ <!-- - `summary-totals.csv`: Edits per day per tile that matched -->
+ - `tileSummaries.geojsonseq`: Each GeoJSON object that matched a term
 
 ### Downscaling
 The `Low-Zoom-Aggregation.ipynb` notebook reads in all of the tile summaries in tileSummaries.geojsonseq and creates lower zoom aggregations to fit all the data into vector tiles.

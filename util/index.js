@@ -5,7 +5,7 @@ var path = require('path');
 var tileReduce = require('@mapbox/tile-reduce');
 var _ = require('lodash')
 
-var searchTerms = ["mapillary","bing","mapbox"]
+var searchTerms = ["mapillary"]
 
 var matched = {}
 searchTerms.forEach(function(term){
@@ -20,8 +20,8 @@ tileReduce({
     // output: fs.createWriteStream('../data/tileSummaries.geojsonseq'),
     // bbox: [-105.10,14.39,-100.49,20.72],
     // bbox: [-178.44,18.86,-154.76,28.52],
-    bbox: [-74.5903,40.4774,-73.4256,41.1773],
-    // bbox: [-79.7619,40.4774,-71.7956,45.0159],
+    // bbox: [-74.5903,40.4774,-73.4256,41.1773],
+    bbox: [-79.7619,40.4774,-71.7956,45.0159],
     mapOptions: searchTerms
 })
 .on('reduce', function(res){
@@ -36,21 +36,6 @@ tileReduce({
       }
     })
   })
-  // Object.keys(res[0]).forEach(function(team){
-  //   Object.keys(res[0][team]).forEach(function(day){
-  //     if ( !dailyCounts.hasOwnProperty(day) ){
-  //       dailyCounts[day] = {}
-  //     }
-  //     if (!dailyCounts[day].hasOwnProperty(team)){
-  //       dailyCounts[day][team] = res[0][team][day]
-  //     }else{
-  //       dailyCounts[day][team]['km'] += res[0][team][day]['km']
-  //       dailyCounts[day][team]['b']  += res[0][team][day]['b']
-  //       dailyCounts[day][team]['p']  += res[0][team][day]['p']
-  //       dailyCounts[day][team]['e']  += res[0][team][day]['e']
-  //     }
-  //   });
-  // });
 })
 .on('end', function(){
   console.log("DONE")
@@ -67,6 +52,7 @@ tileReduce({
       console.log(val.n, val.c)
     })
   })
+
   // var dailySummaries = fs.createWriteStream('../data/summary-totals.csv');
   // dailySummaries.write("day\t")
   // var teams = Object.keys(dataTeams)
