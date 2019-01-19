@@ -20,8 +20,8 @@ tileReduce({
     // output: fs.createWriteStream('../data/tileSummaries.geojsonseq'),
     // bbox: [-105.10,14.39,-100.49,20.72],
     // bbox: [-178.44,18.86,-154.76,28.52],
-    // bbox: [-74.5903,40.4774,-73.4256,41.1773],
-    bbox: [-79.7619,40.4774,-71.7956,45.0159],
+   // bbox: [-74.5903,40.4774,-73.4256,41.1773],
+    //bbox: [-79.7619,40.4774,-71.7956,45.0159],
     mapOptions: searchTerms
 })
 .on('reduce', function(res){

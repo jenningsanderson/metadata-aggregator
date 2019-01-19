@@ -26,7 +26,7 @@ module.exports = function(data, tile, writeData, done) {
               matched[term][kv]++;
             }
             feat.properties['@matched'] = term
-            feat.tippecanoe = {'minzoom':12,'maxzoom':15,'layer':'geometries'}
+            feat.tippecanoe = {'minzoom':10,'maxzoom':15,'layer':'geometries'}
             writeData(JSON.stringify(feat)+"\n")
           }
         })
